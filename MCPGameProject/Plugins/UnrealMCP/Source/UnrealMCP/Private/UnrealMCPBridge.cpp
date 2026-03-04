@@ -57,6 +57,7 @@
 #include "Commands/UnrealMCPProjectCommands.h"
 #include "Commands/UnrealMCPCommonUtils.h"
 #include "Commands/UnrealMCPUMGCommands.h"
+#include "Commands/UnrealMCPMaterialCommands.h"
 
 // Default settings
 #define MCP_SERVER_HOST "127.0.0.1"
@@ -277,6 +278,12 @@ FString UUnrealMCPBridge::ExecuteCommand(const FString& CommandType, const TShar
                      CommandType == TEXT("add_widget_to_viewport"))
             {
                 ResultJson = UMGCommands->HandleCommand(CommandType, Params);
+            }
+            // Material Commands
+            else if (CommandType == TEXT("set_actor_material") ||
+                     CommandType == TEXT("set_material_parameter"))
+            {
+                ResultJson = FUnrealMCPMaterialCommands::HandleCommand(CommandType, Params);
             }
             else
             {

@@ -1,0 +1,15 @@
+{
+  "name": "unreal-mcp",
+  "version": "1.0.0",
+  "mcpServers": {
+    "unreal-mcp": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "E:/unreal_projects/Lyra5_7_gemini_cli/unreal-mcp-src/Python",
+        "run",
+        "unreal_mcp_server.py"
+      ]
+    }
+  }
+}

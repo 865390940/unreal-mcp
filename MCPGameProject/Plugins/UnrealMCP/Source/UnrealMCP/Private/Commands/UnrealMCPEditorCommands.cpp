@@ -422,7 +422,7 @@ TSharedPtr<FJsonObject> FUnrealMCPEditorCommands::HandleSpawnBlueprintActor(cons
 
     if (!FPackageName::DoesPackageExist(AssetPath))
     {
-        return FUnrealMCPCommonUtils::CreateErrorResponse(FString::Printf(TEXT("Blueprint '%s' not found – it must reside under /Game/Blueprints"), *BlueprintName));
+        return FUnrealMCPCommonUtils::CreateErrorResponse(FString::Printf(TEXT("Blueprint '%s' not found. It must reside under /Game/Blueprints"), *BlueprintName));
     }
 
     UBlueprint* Blueprint = LoadObject<UBlueprint>(nullptr, *AssetPath);
